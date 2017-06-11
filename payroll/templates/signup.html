@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sign Up</title>
 </head>
 <body>
-
+   <form action='signup' method='POST'>
+       <input type='text' name='uid' id='uid' placeholder='工号'><br>
+       <input type='password' name='pw' id='pw' placeholder='密码'><br>
+       <input type="text" name="name" id="name" placeholder="姓名"><br>
+       <input type="text" name="email" id="email" placeholder="邮箱"><br>
+       <input type="text" name="job" id="job" placeholder="工种"><br>
+       <input type="text" name="dept" id="dept" placeholder="部门"><br>
+       <input type='submit' name='submit'>
+   </form>
+{% if error %}
+    <p>{{ error }}</p>
+{% endif %}
 </body>
 </html>

@@ -1,0 +1,3 @@
+graft payroll/templates
+graft payroll/static
+include payroll/schema.sql
