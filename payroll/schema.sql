@@ -8,7 +8,7 @@ create table if not exists job (
 
 create table if not exists info (
     uid int primary key check ( uid >= 1000),
-    pass varchar(40) not null,
+    pw varchar(40) not null,
     name varchar(40) not null,
     email varchar(40) not null check ( email like '%@%.%'),
     job varchar(40) not null references job(type),
@@ -54,84 +54,84 @@ insert into job(type, rank, base_salary) values('Trainee', 6, 3000);
 
 
 -- table info
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1000, 'nwp_pass', 'nieweiping', 'nieweiping@go.com', 'Chairman',FALSE, null);
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1001, 'yb_pass', 'yubing', 'yubing@go.com', 'GManager',FALSE, null);
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1002, 'wrn_pass', 'wangrunan', 'wangrunan@go.com', 'Financer',FALSE, null);
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1000, 'nwp_pw', 'nieweiping', 'nieweiping@go.com', 'Chairman',FALSE, null);
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1001, 'yb_pw', 'yubing', 'yubing@go.com', 'GManager',FALSE, null);
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1002, 'wrn_pw', 'wangrunan', 'wangrunan@go.com', 'Financer',FALSE, null);
 
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1003, 'kj_pass', 'kejie', 'kejie@go.com', 'ManagerA',FALSE, 'A');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1004, 'gl_pass', 'guli', 'guli@go.com', 'ManagerB',FALSE, 'B');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1005, 'twx_pass', 'tangweixing', 'tangweixing@go.com', 'ManagerC',FALSE, 'C');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1003, 'kj_pw', 'kejie', 'kejie@go.com', 'ManagerA',FALSE, 'A');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1004, 'gl_pw', 'guli', 'guli@go.com', 'ManagerB',FALSE, 'B');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1005, 'twx_pw', 'tangweixing', 'tangweixing@go.com', 'ManagerC',FALSE, 'C');
 
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1006, 'cyy_pass', 'chenyaoye', 'chenyaoye@go.com', 'Expert',TRUE, 'A');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1007, 'tjj_pass', 'tuojiaxi', 'tuojiaxi@go.com', 'Expert',TRUE, 'A');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1008, 'zrr_pass', 'zhouruiyang', 'zhouruiyang@go.com', 'Expert',TRUE, 'B');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1009, 'sy_pass', 'shiyue', 'shiyue@go.com', 'Expert',TRUE, 'B');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1010, 'myt_pass', 'miyuting', 'miyuting@go.com', 'Expert',TRUE, 'C');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1011, 'jwj_pass', 'jiangweijie', 'jiangweijie@go.com', 'Expert',TRUE, 'C');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1006, 'cyy_pw', 'chenyaoye', 'chenyaoye@go.com', 'Expert',TRUE, 'A');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1007, 'tjj_pw', 'tuojiaxi', 'tuojiaxi@go.com', 'Expert',TRUE, 'A');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1008, 'zrr_pw', 'zhouruiyang', 'zhouruiyang@go.com', 'Expert',TRUE, 'B');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1009, 'sy_pw', 'shiyue', 'shiyue@go.com', 'Expert',TRUE, 'B');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1010, 'myt_pw', 'miyuting', 'miyuting@go.com', 'Expert',TRUE, 'C');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1011, 'jwj_pw', 'jiangweijie', 'jiangweijie@go.com', 'Expert',TRUE, 'C');
 
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1012, 'dyf_pass', 'dangyifei', 'dangyifei@go.com', 'SeniorStaff',TRUE, 'A');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1013, 'pwy_pass', 'piaowenyao', 'piaowenyao@go.com', 'SeniorStaff',TRUE, 'A');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1014, 'lqc_pass', 'liqincheng', 'liqincheng@go.com', 'SeniorStaff',TRUE, 'B');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1015, 'lx_pass', 'lianxiao', 'lianxiao@go.com', 'SeniorStaff',TRUE, 'B');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1016, 'fty_pass', 'fantingyu', 'fantingyu@go.com', 'SeniorStaff',TRUE, 'C');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1017, 'fyr_pass', 'fanyunruo', 'fanyunruo@go.com', 'SeniorStaff',TRUE, 'C');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1012, 'dyf_pw', 'dangyifei', 'dangyifei@go.com', 'SeniorStaff',TRUE, 'A');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1013, 'pwy_pw', 'piaowenyao', 'piaowenyao@go.com', 'SeniorStaff',TRUE, 'A');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1014, 'lqc_pw', 'liqincheng', 'liqincheng@go.com', 'SeniorStaff',TRUE, 'B');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1015, 'lx_pw', 'lianxiao', 'lianxiao@go.com', 'SeniorStaff',TRUE, 'B');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1016, 'fty_pw', 'fantingyu', 'fantingyu@go.com', 'SeniorStaff',TRUE, 'C');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1017, 'fyr_pw', 'fanyunruo', 'fanyunruo@go.com', 'SeniorStaff',TRUE, 'C');
 
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1018, 'yzy_pass', 'yuzhiying', 'yuzhiying@go.com', 'MidderStaff',TRUE, 'A');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1019, 'wcx_pass', 'wangchenxing', 'wangchenxing@go.com', 'MidderStaff',TRUE, 'A');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1020, 'rnw_pass', 'ruinaiwei', 'ruinaiwei@go.com', 'MidderStaff',TRUE, 'B');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1021, 'lj_pass', 'lujia', 'lujia@go.com', 'MidderStaff',TRUE, 'B');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1022, 'lh_pass', 'lihe', 'lihe@go.com', 'MidderStaff',TRUE, 'C');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1023, 'srh_pass', 'songronghui', 'songronghui@go.com', 'MidderStaff',TRUE, 'C');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1018, 'yzy_pw', 'yuzhiying', 'yuzhiying@go.com', 'MidderStaff',TRUE, 'A');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1019, 'wcx_pw', 'wangchenxing', 'wangchenxing@go.com', 'MidderStaff',TRUE, 'A');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1020, 'rnw_pw', 'ruinaiwei', 'ruinaiwei@go.com', 'MidderStaff',TRUE, 'B');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1021, 'lj_pw', 'lujia', 'lujia@go.com', 'MidderStaff',TRUE, 'B');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1022, 'lh_pw', 'lihe', 'lihe@go.com', 'MidderStaff',TRUE, 'C');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1023, 'srh_pw', 'songronghui', 'songronghui@go.com', 'MidderStaff',TRUE, 'C');
 
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1024, 'ydx_pass', 'yangdingxin', 'yangdingxing@go.com', 'PrimaryStaff',TRUE, 'A');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1025, 'ply_pass', 'pengliyao', 'pengliyao@go.com', 'PrimaryStaff',TRUE, 'A');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1026, 'pq_pass', 'pengquan', 'pengquan@go.com', 'PrimaryStaff',TRUE, 'B');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1027, 'ch_pass', 'changhao', 'changhao@go.com', 'PrimaryStaff',TRUE, 'B');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1028, 'kj_pass', 'kongjie', 'kongjie@go.com', 'PrimaryStaff',TRUE, 'C');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1029, 'gly_pass', 'gulingyi', 'gulingyi@go.com', 'PrimaryStaff',TRUE, 'C');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1024, 'ydx_pw', 'yangdingxin', 'yangdingxing@go.com', 'PrimaryStaff',TRUE, 'A');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1025, 'ply_pw', 'pengliyao', 'pengliyao@go.com', 'PrimaryStaff',TRUE, 'A');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1026, 'pq_pw', 'pengquan', 'pengquan@go.com', 'PrimaryStaff',TRUE, 'B');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1027, 'ch_pw', 'changhao', 'changhao@go.com', 'PrimaryStaff',TRUE, 'B');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1028, 'kj_pw', 'kongjie', 'kongjie@go.com', 'PrimaryStaff',TRUE, 'C');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1029, 'gly_pw', 'gulingyi', 'gulingyi@go.com', 'PrimaryStaff',TRUE, 'C');
 
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1030, 'gzh_pass', 'guzihao', 'guzihao@go.com', 'Trainee',TRUE, 'A');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1031, 'hys_pass', 'huangyunsong', 'huangyunsong@go.com', 'Trainee',TRUE, 'A');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1032, 'zcy_pass', 'zhaochengyu', 'zhaochengyu@go.com', 'Trainee',TRUE, 'B');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1033, 'txy_pass', 'tuxiaoyu', 'tuxiaoyu@go.com', 'Trainee',TRUE, 'B');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1034, 'xeh_pass', 'xieerhao', 'xieerhao@go.com', 'Trainee',TRUE, 'C');
-insert into info(uid, pass, name, email, job, is_admin, dept)
-	values(1035, 'gyz_pass', 'guoyuzheng', 'guoyuzheng@go.com', 'Trainee',TRUE, 'C');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1030, 'gzh_pw', 'guzihao', 'guzihao@go.com', 'Trainee',TRUE, 'A');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1031, 'hys_pw', 'huangyunsong', 'huangyunsong@go.com', 'Trainee',TRUE, 'A');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1032, 'zcy_pw', 'zhaochengyu', 'zhaochengyu@go.com', 'Trainee',TRUE, 'B');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1033, 'txy_pw', 'tuxiaoyu', 'tuxiaoyu@go.com', 'Trainee',TRUE, 'B');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1034, 'xeh_pw', 'xieerhao', 'xieerhao@go.com', 'Trainee',TRUE, 'C');
+insert into info(uid, pw, name, email, job, is_admin, dept)
+	values(1035, 'gyz_pw', 'guoyuzheng', 'guoyuzheng@go.com', 'Trainee',TRUE, 'C');
 
 
 -- table attendance
