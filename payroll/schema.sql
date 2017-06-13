@@ -55,18 +55,18 @@ insert into job(type, rank, base_salary) values('Trainee', 6, 3000);
 
 -- table info
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1000, 'nwp_pw', 'nieweiping', 'nieweiping@go.com', 'Chairman',FALSE, null);
+	values(1000, 'nwp_pw', 'nieweiping', 'nieweiping@go.com', 'Chairman', TRUE, null);
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1001, 'yb_pw', 'yubing', 'yubing@go.com', 'GManager',FALSE, null);
+	values(1001, 'yb_pw', 'yubing', 'yubing@go.com', 'GManager',TRUE, null);
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1002, 'wrn_pw', 'wangrunan', 'wangrunan@go.com', 'Financer',FALSE, null);
+	values(1002, 'wrn_pw', 'wangrunan', 'wangrunan@go.com', 'Financer',TRUE, null);
 
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1003, 'kj_pw', 'kejie', 'kejie@go.com', 'ManagerA',FALSE, 'A');
+	values(1003, 'kj_pw', 'kejie', 'kejie@go.com', 'ManagerA',TRUE, 'A');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1004, 'gl_pw', 'guli', 'guli@go.com', 'ManagerB',FALSE, 'B');
+	values(1004, 'gl_pw', 'guli', 'guli@go.com', 'ManagerB',TRUE, 'B');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1005, 'twx_pw', 'tangweixing', 'tangweixing@go.com', 'ManagerC',FALSE, 'C');
+	values(1005, 'twx_pw', 'tangweixing', 'tangweixing@go.com', 'ManagerC',TRUE, 'C');
 
 insert into info(uid, pw, name, email, job, is_admin, dept)
 	values(1006, 'cyy_pw', 'chenyaoye', 'chenyaoye@go.com', 'Expert',TRUE, 'A');

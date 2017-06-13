@@ -1,21 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Sign Up</title>
-</head>
-<body>
-   <form action='signup' method='POST'>
-       <input type='text' name='uid' id='uid' placeholder='工号'><br>
-       <input type='password' name='pw' id='pw' placeholder='密码'><br>
-       <input type="text" name="name" id="name" placeholder="姓名"><br>
-       <input type="text" name="email" id="email" placeholder="邮箱"><br>
-       <input type="text" name="job" id="job" placeholder="工种"><br>
-       <input type="text" name="dept" id="dept" placeholder="部门"><br>
-       <input type='submit' name='submit'>
-   </form>
-{% if error %}
-    <p>{{ error }}</p>
-{% endif %}
-</body>
-</html>
+{% extends 'admin/master.html' %}
+{% block body %}
+{{ super() }}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <form action="{{ url_for('accountview.signup') }}" method="post">
+                <div style="width:100%;text-align:center">
+                    <legend>注册</legend>
+                       <input type='text' name='uid' id='uid' placeholder='工号'><br>
+                       <input type='password' name='pw' id='pw' placeholder='密码'><br>
+                       <input type="text" name="name" id="name" placeholder="姓名"><br>
+                       <input type="text" name="email" id="email" placeholder="邮箱"><br>
+                       <input type="text" name="job" id="job" placeholder="工种"><br>
+                       <input type="text" name="dept" id="dept" placeholder="部门"><br>
+                       <input type='submit' name='submit' value="确定">
+                        {% if error %}
+                            <br><br>
+                            <p style="color:red">{{ error }}</p>
+                        {% endif %}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock body %}
