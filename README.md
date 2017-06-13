@@ -2,17 +2,17 @@
 
 ## 环境搭建
 首先安装virtualenv环境
-```c
+```
 pip install virtualenv
 virtualenv ENV
 ```
 进入virtualenv环境
 Linux环境下
-```c
+```
 source ENV/bin/activate.sh
 ```
 Windows环境下
-```c
+```
 .\ENV\Scripts\activate
 ```
 
