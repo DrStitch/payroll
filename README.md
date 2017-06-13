@@ -17,26 +17,50 @@ Windows环境下
 ```
 
 ## 安装
-```c
+```
 pip install -r requirements.txt
 pip install --editable .
+```
+
+## 添加配置
+修改config.py文件，例如
+```
+class Config(object):
+    SECRET_KEY = 'This Is Some Secret Key'
+    DEBUG = False
+    TESTING = False
+    # change next line to make DATABASE available
+    SQLALCHEMY_DATABASE_URI = 'postgresql://name@host/dbname'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+
+class ProductionConfig(Config):
+    pass
+
+
+class DevelopmentConfig(Config):
+    DEBUG = True
+
+
+class TestingConfig(Config):
+    TESTING = True
 ```
 
 ## 运行
 先添加环境变量
 Linux环境下
-```c
+```
 export FLASK_APP=payroll
 ```
 Windows环境下
-```c
+```
 $env:FLASK_APP = 'payroll'
 ```
 初始化数据库
-```c
+```
 flask initdb
 ```
 运行程序
-```c
+```
 flask run
 ```
