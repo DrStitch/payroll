@@ -33,6 +33,7 @@ create table if not exists allowance (
 
 create table if not exists salary (
     uid int references info(uid),
+		dept varchar(40),
     month date,
     salary int,
     primary key (uid, month)
@@ -55,83 +56,83 @@ insert into job(type, rank, base_salary) values('Trainee', 6, 3000);
 
 -- table info
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1000, 'nwp_pw', 'nieweiping', 'nieweiping@go.com', 'Chairman', TRUE, null);
+	values(1000, 'nwp_pw', '聂卫平', 'nieweiping@go.com', 'Chairman', TRUE, '部门A');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1001, 'yb_pw', 'yubing', 'yubing@go.com', 'GManager',TRUE, null);
+	values(1001, 'yb_pw', 'yubing', 'yubing@go.com', 'GManager',TRUE, '部门A');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1002, 'wrn_pw', 'wangrunan', 'wangrunan@go.com', 'Financer',TRUE, null);
+	values(1002, 'wrn_pw', 'wangrunan', 'wangrunan@go.com', 'Financer',TRUE, '部门A');
 
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1003, 'kj_pw', 'kejie', 'kejie@go.com', 'ManagerA',TRUE, 'A');
+	values(1003, 'kj_pw', 'kejie', 'kejie@go.com', 'ManagerA',TRUE, '部门A');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1004, 'gl_pw', 'guli', 'guli@go.com', 'ManagerB',TRUE, 'B');
+	values(1004, 'gl_pw', 'guli', 'guli@go.com', 'ManagerB',TRUE, '部门B');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1005, 'twx_pw', 'tangweixing', 'tangweixing@go.com', 'ManagerC',TRUE, 'C');
+	values(1005, 'twx_pw', 'tangweixing', 'tangweixing@go.com', 'ManagerC',TRUE, '部门C');
 
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1006, 'cyy_pw', 'chenyaoye', 'chenyaoye@go.com', 'Expert',TRUE, 'A');
+	values(1006, 'cyy_pw', 'chenyaoye', 'chenyaoye@go.com', 'Expert',TRUE, '部门A');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1007, 'tjj_pw', 'tuojiaxi', 'tuojiaxi@go.com', 'Expert',TRUE, 'A');
+	values(1007, 'tjj_pw', 'tuojiaxi', 'tuojiaxi@go.com', 'Expert',TRUE, '部门A');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1008, 'zrr_pw', 'zhouruiyang', 'zhouruiyang@go.com', 'Expert',TRUE, 'B');
+	values(1008, 'zrr_pw', 'zhouruiyang', 'zhouruiyang@go.com', 'Expert',TRUE, '部门B');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1009, 'sy_pw', 'shiyue', 'shiyue@go.com', 'Expert',TRUE, 'B');
+	values(1009, 'sy_pw', 'shiyue', 'shiyue@go.com', 'Expert',TRUE, '部门B');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1010, 'myt_pw', 'miyuting', 'miyuting@go.com', 'Expert',TRUE, 'C');
+	values(1010, 'myt_pw', 'miyuting', 'miyuting@go.com', 'Expert',TRUE, '部门C');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1011, 'jwj_pw', 'jiangweijie', 'jiangweijie@go.com', 'Expert',TRUE, 'C');
+	values(1011, 'jwj_pw', 'jiangweijie', 'jiangweijie@go.com', 'Expert',TRUE, '部门C');
 
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1012, 'dyf_pw', 'dangyifei', 'dangyifei@go.com', 'SeniorStaff',TRUE, 'A');
+	values(1012, 'dyf_pw', 'dangyifei', 'dangyifei@go.com', 'SeniorStaff',TRUE, '部门A');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1013, 'pwy_pw', 'piaowenyao', 'piaowenyao@go.com', 'SeniorStaff',TRUE, 'A');
+	values(1013, 'pwy_pw', 'piaowenyao', 'piaowenyao@go.com', 'SeniorStaff',TRUE, '部门A');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1014, 'lqc_pw', 'liqincheng', 'liqincheng@go.com', 'SeniorStaff',TRUE, 'B');
+	values(1014, 'lqc_pw', 'liqincheng', 'liqincheng@go.com', 'SeniorStaff',TRUE, '部门B');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1015, 'lx_pw', 'lianxiao', 'lianxiao@go.com', 'SeniorStaff',TRUE, 'B');
+	values(1015, 'lx_pw', 'lianxiao', 'lianxiao@go.com', 'SeniorStaff',TRUE, '部门B');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1016, 'fty_pw', 'fantingyu', 'fantingyu@go.com', 'SeniorStaff',TRUE, 'C');
+	values(1016, 'fty_pw', 'fantingyu', 'fantingyu@go.com', 'SeniorStaff',TRUE, '部门C');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1017, 'fyr_pw', 'fanyunruo', 'fanyunruo@go.com', 'SeniorStaff',TRUE, 'C');
+	values(1017, 'fyr_pw', 'fanyunruo', 'fanyunruo@go.com', 'SeniorStaff',TRUE, '部门C');
 
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1018, 'yzy_pw', 'yuzhiying', 'yuzhiying@go.com', 'MidderStaff',TRUE, 'A');
+	values(1018, 'yzy_pw', 'yuzhiying', 'yuzhiying@go.com', 'MidderStaff',TRUE, '部门A');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1019, 'wcx_pw', 'wangchenxing', 'wangchenxing@go.com', 'MidderStaff',TRUE, 'A');
+	values(1019, 'wcx_pw', 'wangchenxing', 'wangchenxing@go.com', 'MidderStaff',TRUE, '部门A');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1020, 'rnw_pw', 'ruinaiwei', 'ruinaiwei@go.com', 'MidderStaff',TRUE, 'B');
+	values(1020, 'rnw_pw', 'ruinaiwei', 'ruinaiwei@go.com', 'MidderStaff',TRUE, '部门B');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1021, 'lj_pw', 'lujia', 'lujia@go.com', 'MidderStaff',TRUE, 'B');
+	values(1021, 'lj_pw', 'lujia', 'lujia@go.com', 'MidderStaff',TRUE, '部门B');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1022, 'lh_pw', 'lihe', 'lihe@go.com', 'MidderStaff',TRUE, 'C');
+	values(1022, 'lh_pw', 'lihe', 'lihe@go.com', 'MidderStaff',TRUE, '部门C');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1023, 'srh_pw', 'songronghui', 'songronghui@go.com', 'MidderStaff',TRUE, 'C');
+	values(1023, 'srh_pw', 'songronghui', 'songronghui@go.com', 'MidderStaff',TRUE, '部门C');
 
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1024, 'ydx_pw', 'yangdingxin', 'yangdingxing@go.com', 'PrimaryStaff',TRUE, 'A');
+	values(1024, 'ydx_pw', 'yangdingxin', 'yangdingxing@go.com', 'PrimaryStaff',TRUE, '部门A');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1025, 'ply_pw', 'pengliyao', 'pengliyao@go.com', 'PrimaryStaff',TRUE, 'A');
+	values(1025, 'ply_pw', 'pengliyao', 'pengliyao@go.com', 'PrimaryStaff',TRUE, '部门A');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1026, 'pq_pw', 'pengquan', 'pengquan@go.com', 'PrimaryStaff',TRUE, 'B');
+	values(1026, 'pq_pw', 'pengquan', 'pengquan@go.com', 'PrimaryStaff',TRUE, '部门B');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1027, 'ch_pw', 'changhao', 'changhao@go.com', 'PrimaryStaff',TRUE, 'B');
+	values(1027, 'ch_pw', 'changhao', 'changhao@go.com', 'PrimaryStaff',TRUE, '部门B');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1028, 'kj_pw', 'kongjie', 'kongjie@go.com', 'PrimaryStaff',TRUE, 'C');
+	values(1028, 'kj_pw', 'kongjie', 'kongjie@go.com', 'PrimaryStaff',TRUE, '部门C');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1029, 'gly_pw', 'gulingyi', 'gulingyi@go.com', 'PrimaryStaff',TRUE, 'C');
+	values(1029, 'gly_pw', 'gulingyi', 'gulingyi@go.com', 'PrimaryStaff',TRUE, '部门C');
 
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1030, 'gzh_pw', 'guzihao', 'guzihao@go.com', 'Trainee',TRUE, 'A');
+	values(1030, 'gzh_pw', 'guzihao', 'guzihao@go.com', 'Trainee',TRUE, '部门A');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1031, 'hys_pw', 'huangyunsong', 'huangyunsong@go.com', 'Trainee',TRUE, 'A');
+	values(1031, 'hys_pw', 'huangyunsong', 'huangyunsong@go.com', 'Trainee',TRUE, '部门A');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1032, 'zcy_pw', 'zhaochengyu', 'zhaochengyu@go.com', 'Trainee',TRUE, 'B');
+	values(1032, 'zcy_pw', 'zhaochengyu', 'zhaochengyu@go.com', 'Trainee',TRUE, '部门B');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1033, 'txy_pw', 'tuxiaoyu', 'tuxiaoyu@go.com', 'Trainee',TRUE, 'B');
+	values(1033, 'txy_pw', 'tuxiaoyu', 'tuxiaoyu@go.com', 'Trainee',TRUE, '部门B');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1034, 'xeh_pw', 'xieerhao', 'xieerhao@go.com', 'Trainee',TRUE, 'C');
+	values(1034, 'xeh_pw', 'xieerhao', 'xieerhao@go.com', 'Trainee',TRUE, '部门C');
 insert into info(uid, pw, name, email, job, is_admin, dept)
-	values(1035, 'gyz_pw', 'guoyuzheng', 'guoyuzheng@go.com', 'Trainee',TRUE, 'C');
+	values(1035, 'gyz_pw', 'guoyuzheng', 'guoyuzheng@go.com', 'Trainee',TRUE, '部门C');
 
 
 -- table attendance
@@ -218,14 +219,14 @@ insert into allowance(uid, day, hour, type, bounty) values(1009, '2017-01-02', 3
 
 
 -- table salary
-insert into salary(uid, month, salary) values(1000, '2016-12-31', 10200);
-insert into salary(uid, month, salary) values(1001, '2016-12-31', 10100);
-insert into salary(uid, month, salary) values(1002, '2016-12-31', 8000);
-insert into salary(uid, month, salary) values(1003, '2016-12-31', 7500);
-insert into salary(uid, month, salary) values(1004, '2016-12-31', 9000);
-insert into salary(uid, month, salary) values(1005, '2016-12-31', 8800);
-insert into salary(uid, month, salary) values(1006, '2016-12-31', 7600);
-insert into salary(uid, month, salary) values(1007, '2016-12-31', 7000);
-insert into salary(uid, month, salary) values(1008, '2016-12-31', 6800);
-insert into salary(uid, month, salary) values(1009, '2016-12-31', 7030);
-insert into salary(uid, month, salary) values(1010, '2016-12-31', 6800);
+insert into salary(uid, dept, month, salary) values(1000, '部门A', '2016-12-01', 10200);
+insert into salary(uid, dept, month, salary) values(1001, '部门A', '2016-12-01', 10100);
+insert into salary(uid, dept, month, salary) values(1002, '部门A', '2016-12-01', 8000);
+insert into salary(uid, dept, month, salary) values(1003, '部门A', '2016-12-01', 7500);
+insert into salary(uid, dept, month, salary) values(1004, '部门A', '2016-12-01', 9000);
+insert into salary(uid, dept, month, salary) values(1005, '部门A', '2016-12-01', 8800);
+insert into salary(uid, dept, month, salary) values(1006, '部门B', '2016-12-01', 7600);
+insert into salary(uid, dept, month, salary) values(1007, '部门B', '2016-12-01', 7000);
+insert into salary(uid, dept, month, salary) values(1008, '部门B', '2016-12-01', 6800);
+insert into salary(uid, dept, month, salary) values(1009, '部门B', '2016-12-01', 7030);
+insert into salary(uid, dept, month, salary) values(1010, '部门B', '2016-12-01', 6800);

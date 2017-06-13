@@ -1,0 +1,35 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+{{ super() }}
+<div class="container" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="lead" style="width:100%;text-align:center">
+            <table border="0" align="center">
+            <tr>
+                <th>工号：</th><th>{{ current_user.uid }}</th>
+            </tr>
+            <tr>
+                <th>姓名：</th><th>{{ current_user.name }}</th>
+            </tr>
+            <tr>
+                <th>邮件：</th><th>{{ current_user.email }}</th>
+            </tr>
+            <tr>
+                <th>部门：</th><th>{{ current_user.dept }}</th>
+            </tr>
+            <tr>
+                <th>工种：</th><th>{{ current_user.job }}</th>
+            </tr>
+            <tr>
+                <th>基本工资：</th><th>{{ current_user._job.base_salary }}</th>
+            </tr>
+            <tr>
+                <th>年终奖：</th><th>{{ yeb }}</th>
+            </tr>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

@@ -4,15 +4,23 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
-            <form action="{{ url_for('accountview.signup') }}" method="post">
+            <form action="{{ url_for('admin.signup') }}" method="post">
                 <div style="width:100%;text-align:center">
                     <legend>注册</legend>
                        <input type='text' name='uid' id='uid' placeholder='工号'><br>
                        <input type='password' name='pw' id='pw' placeholder='密码'><br>
                        <input type="text" name="name" id="name" placeholder="姓名"><br>
                        <input type="text" name="email" id="email" placeholder="邮箱"><br>
-                       <input type="text" name="job" id="job" placeholder="工种"><br>
-                       <input type="text" name="dept" id="dept" placeholder="部门"><br>
+                        <select name="job" id="job">
+                            {% for jt in jts %}
+                                <option value="{{ jt }}">{{ jt }}</option>
+                            {% endfor %}
+                        </select><br>
+                        <select name="dept", id="dept">
+                            <option value="部门A">部门A</option>
+                            <option value="部门B">部门B</option>
+                            <option value="部门C">部门C</option>
+                        </select><br>
                        <input type='submit' name='submit' value="确定">
                         {% if error %}
                             <br><br>
