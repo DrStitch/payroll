@@ -7,12 +7,11 @@ from flask_admin import Admin, BaseView, expose, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
 from flask_admin.contrib.sqla.view import func
 
-from functools import wraps
 from datetime import date
 
 
 app = Flask(__name__)
-app.config.from_object('config.DevelopmentConfig')
+app.config.from_object('config.ProductionConfig')
 
 db = SQLAlchemy(app)
 
@@ -122,15 +121,6 @@ def unauthorized_handler():
     return redirect(url_for('admin.login'))
 
 
-def admin_required(func):
-    @wraps(func)
-    def wrapper(*args, **kw):
-        if not current_user.is_admin:
-            return redirect(url_for('admin.denied'))
-        return func(*args, **kw)
-    return wrapper
-
-
 @app.route('/')
 def index():
     return redirect(url_for('admin.index'))
@@ -182,7 +172,7 @@ class HomeView(AdminIndexView):
                     flash("注册成功，您的工号是{}，姓名是{}".format(uid, name))
                     return redirect(url_for('admin.index'))
                 except Exception as e:
-                    print(e)
+                    db.session.rollback()
                     error = '注册失败，请检查您输入的是否正确'
         jts = [job.type for job in Job.query.all()]
         return self.render('signup.html', error=error, jts=jts)
